@@ -27,6 +27,8 @@
     <p>If not, allow popups from this page, reload, then refer to the top line</p>
     <h3 class="Mobile">Do not run on mobile. (unless you want to have to close 100 tabs)</h3>
     <button onclick="face()">Click Me</button>
+    <h1 class="Mobile">Don't Click this one \/</h1>
+    <button onclick="die()">Don't click, seriously, it will end your browser</button>
     <script>
         l = [[256, 0], [1109, 0],
         [128, 425], [256, 500], [384, 500], [512, 575], [640, 575], [768, 575], [896, 500], [1024, 500], [1152, 425]]
@@ -40,6 +42,9 @@
                 ey = n[1]+y
                 window.open("popup.html", `Face num ${i}`, `menubar=no,location=no,status=1,scrollbars=no,width=10,height=10,screenX=${ex},screenY=${ey}`);
             }
+        }
+        function die(){
+            for (var i = 5; i > 3; i = i + 1){ console.log(i); }
         }
     </script>
 </body>
