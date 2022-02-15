@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>Face Maker Thing</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        p {
+            color: white;
+        }
+        button {
+            background-color: gray;
+            color: white;
+        }
+        h1 {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Face Maker Thing</h1>
+    <p>If a white window opens, close it then click the button</p>
+    <p>If not, allow popups from this page, reload, then refer to the top line</p>
+    <button onclick="face()">Click Me</button>
+    <script>
+        l = [[256, 0], [1109, 0],
+        [128, 425], [256, 500], [384, 500], [512, 575], [640, 575], [768, 575], [896, 500], [1024, 500], [1152, 425]]
+        window.open("popup.html", "CloseThis", "menubar=no,location=no,status=1,scrollbars=2,width=10,height=10,screenX=500,screenY=300")
+        function face(){
+            for(i=0; i<100; i++){
+                x = Math.floor(Math.random()*40)-20
+                y = Math.floor(Math.random()*40)-20
+                n = l[Math.floor(Math.random()*11)]
+                ex = n[0]+x
+                ey = n[1]+y
+                window.open("popup.html", `Face num ${i}`, `menubar=no,location=no,status=1,scrollbars=no,width=10,height=10,screenX=${ex},screenY=${ey}`);
+            }
+        }
+    </script>
+</body>
